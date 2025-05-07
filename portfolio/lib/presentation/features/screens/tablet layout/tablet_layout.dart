@@ -4,6 +4,7 @@ import 'package:portfolio/presentation/features/widgets/footer.dart';
 import 'package:portfolio/presentation/features/widgets/landing_page_widget.dart';
 import 'package:portfolio/presentation/features/widgets/project_section_widget.dart';
 import 'package:portfolio/presentation/features/widgets/what_i_can_do_widget.dart';
+import 'package:portfolio/presentation/features/widgets/work_projects.dart';
 import 'package:portfolio/presentation/utils/font_icon_sizes/font_icon_size.dart';
 
 class TabletLayout extends StatelessWidget {
@@ -32,8 +33,9 @@ class TabletLayout extends StatelessWidget {
               titleSize: size.width * TabletSizes.nameTitleSize,
               textSize: size.width * TabletSizes.titleDescSize,
             ),
-            ProjectsSection(),
-            ContactSectionWidget(),
+            const WorkProjectsSection(),
+            const ProjectsSection(),
+            const ContactSectionWidget(),
             SizedBox(
               height: size.height * 0.02,
             ),

@@ -3,12 +3,13 @@ import 'package:portfolio/presentation/features/widgets/project_card_widget.dart
 import 'package:portfolio/presentation/utils/colors.dart';
 import 'package:portfolio/static_data/project_data.dart';
 
-class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
+class WorkProjectsSection extends StatelessWidget {
+  const WorkProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       color: AppColors.whiteColor2,
       width: screenWidth,
@@ -17,7 +18,7 @@ class ProjectsSection extends StatelessWidget {
         children: [
           // Work projects title
           Text(
-            "Personal Projects",
+            "Work Projects",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -32,11 +33,8 @@ class ProjectsSection extends StatelessWidget {
               spacing: 25,
               runSpacing: 25,
               children: [
-                for (var project
-                    in projects.where((p) => p.isPersonal == false))
-                  ProjectCardWidget(
-                    project: project,
-                  ),
+                for (var project in projects.where((p) => p.isPersonal == true))
+                  ProjectCardWidget(project: project),
               ],
             ),
           ),

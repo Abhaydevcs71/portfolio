@@ -4,6 +4,7 @@ import 'package:portfolio/presentation/features/widgets/footer.dart';
 import 'package:portfolio/presentation/features/widgets/landing_page_widget.dart';
 import 'package:portfolio/presentation/features/widgets/project_section_widget.dart';
 import 'package:portfolio/presentation/features/widgets/what_i_can_do_widget.dart';
+import 'package:portfolio/presentation/features/widgets/work_projects.dart';
 import 'package:portfolio/presentation/utils/font_icon_sizes/font_icon_size.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -13,12 +14,10 @@ class DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              
               height: size.height,
               width: size.width,
               child: LandingPageWidget(
@@ -30,15 +29,17 @@ class DesktopLayout extends StatelessWidget {
               ),
             ),
             WhatICanDoWidget(
-              
               size: size,
               titleSize: size.width * DesktopSizes.nameTitleSize,
               textSize: size.width * DesktopSizes.titleDescSize,
             ),
+            const WorkProjectsSection(),
             const ProjectsSection(),
             const ContactSectionWidget(),
-            SizedBox(height: size.height * 0.02,),
-            Footer()
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            const Footer()
           ],
         ),
       ),

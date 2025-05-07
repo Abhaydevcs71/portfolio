@@ -10,11 +10,11 @@ class InitialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 950){
+        if (constraints.maxWidth > 950) {
           return const DesktopLayout();
-        }else if (constraints.maxWidth > 450){
+        } else if (constraints.maxWidth > 450) {
           return const TabletLayout();
-        }else {
+        } else {
           return const MobileLayout();
         }
       },

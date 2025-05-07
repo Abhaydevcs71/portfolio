@@ -3,13 +3,12 @@ import 'package:portfolio/presentation/utils/colors.dart';
 import 'package:portfolio/static_data/project_data.dart';
 import 'dart:js' as js;
 
-
 class ProjectCardWidget extends StatelessWidget {
+  final ProjectUtils project;
   const ProjectCardWidget({
     super.key,
     required this.project,
   });
-  final ProjectUtils project;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +17,7 @@ class ProjectCardWidget extends StatelessWidget {
       height: 350,
       width: 260,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: AppColors.whiteColor
-      ),
+          borderRadius: BorderRadius.circular(10), color: AppColors.whiteColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -37,37 +34,42 @@ class ProjectCardWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 15, 12, 12),
             child: Text(
               project.title,
-              style:  TextStyle(
+              style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
-                color:  AppColors.greenColor,
+                color: AppColors.greenColor,
               ),
             ),
           ),
           // subtitle
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Text(
-              //maxLines: 5,
-              project.subtitle,
-              style:  TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 12,
-                color: AppColors.greyColor,
+            child: SizedBox(
+              height: 100, // You can adjust this height as needed
+              child: SingleChildScrollView(
+                child: Text(
+                  project.subtitle,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 12,
+                    color: AppColors.greyColor,
+                  ),
+                ),
               ),
             ),
           ),
-          const Spacer(),
+
+          const SizedBox(
+            height: 10,
+          ),
           // footer
           Container(
             height: 30,
             color: AppColors.greenColor,
-            padding: const EdgeInsets.only(
-              left: 10,right: 10
-            ),
+            padding: const EdgeInsets.only(left: 10, right: 10),
             child: Row(
               children: [
-                 Text(
+                Text(
                   "Available on:",
                   style: TextStyle(
                     color: AppColors.whiteColor,
@@ -93,6 +95,7 @@ class ProjectCardWidget extends StatelessWidget {
                         js.context.callMethod("open", [project.androidLink]);
                       },
                       child: Image.asset(
+                        color: Colors.green,
                         "assets/images/android_icon.png",
                         width: 17,
                       ),

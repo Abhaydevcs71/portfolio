@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/initial_page.dart';
 import 'package:portfolio/presentation/utils/colors.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Portfolio',
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.whiteColor,
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.greenColor),
@@ -24,4 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

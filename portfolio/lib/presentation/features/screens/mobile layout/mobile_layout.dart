@@ -4,6 +4,7 @@ import 'package:portfolio/presentation/features/widgets/contact_section_widget.d
 import 'package:portfolio/presentation/features/widgets/footer.dart';
 import 'package:portfolio/presentation/features/widgets/landing_page_widget.dart';
 import 'package:portfolio/presentation/features/widgets/project_section_widget.dart';
+import 'package:portfolio/presentation/features/widgets/work_projects.dart';
 import 'package:portfolio/presentation/utils/font_icon_sizes/font_icon_size.dart';
 
 class MobileLayout extends StatelessWidget {
@@ -33,12 +34,13 @@ class MobileLayout extends StatelessWidget {
                 titleSize: size.width * MobileSizes.nameTitleSize,
                 textSize: size.width * MobileSizes.titleDescSize,
               ),
-              ProjectsSection(),
-              ContactSectionWidget(),
+              const WorkProjectsSection(),
+              const ProjectsSection(),
+              const ContactSectionWidget(),
               SizedBox(
                 height: size.height * 0.02,
               ),
-              Footer()
+              const Footer()
             ],
           ),
         ),
